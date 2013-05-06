@@ -3,6 +3,7 @@
   <head>
     <title>Fast Anagrammer</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet" media="screen">
   </head>
 <body>
   <div class="container">
@@ -57,7 +58,7 @@ function is_anagram($input,$string,$stringArray){
 if($_GET['q']){
 
 ?>
-<table class="table table-hover">
+<table class="table table-hover anagram-table">
 <tbody>
 <?php
 
@@ -94,6 +95,12 @@ if(strlen($q)>80){
 <?php } ?>
 </div></div>
   </div>
+<div class="copyright">
+	<div class="container">
+  	<p>&copy; <?php echo date("Y"); ?> <a href="http://brianmayer.com">Brian Mayer</a>.  All rights reserved.</p>
+  </div>
+</div>
+
   <script type="text/javascript">
 
   var _gaq = _gaq || [];
