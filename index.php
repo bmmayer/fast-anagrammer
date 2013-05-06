@@ -18,7 +18,7 @@
 <form action="index.php" method="get">
 <div class="input-append">
   <input class="span2 large" id="appendedInputButton" type="text" name="q" style="width:350px">
-  <button class="btn btn-primary" type="button" onclick="submit();">Anagram!</button>
+  <button class="btn btn-primary" type="button" onclick="submit();">Anagram</button>
 </div>
 </form>
 </div>
