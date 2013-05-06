@@ -1,3 +1,8 @@
+<?php
+
+require_once("init.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,10 +20,10 @@
 </div>
 <div class="row" style="margin-top:70px;">
 <div class="span6 offset3">
-<form action="index.php" method="get">
+<form action="index.php" method="post">
 <div class="input-append">
   <input class="span2 large" id="appendedInputButton" type="text" name="q" style="width:350px">
-  <button class="btn btn-primary" type="button" onclick="submit();">Anagram</button>
+  <button class="btn btn-primary" type="button" onclick="submit();">Anagram!</button>
 </div>
 </form>
 </div>
@@ -27,35 +32,7 @@
 <div class="span6 offset3" style="text-align:center">
 <?php
 
-function is_acceptable($input,$string){
-
-	if(strlen($string)<=(strlen($input)+2) && strlen($input)>0){
-		return true;
-	}
-	
-	return false;
-
-}
-
-function is_anagram($input,$string,$stringArray){
-
-	if(!is_acceptable($input,$string)){
-		return false;
-	}
-	foreach($stringArray as $str){
-		if(strpos($input,$str) === false){
-			return false;
-		}
-		if(substr_count($string,$str)>substr_count($input,$str)){
-			return false;
-		}
-	}
-	
-	return true;
-	
-}
-
-if($_GET['q']){
+if($_POST['q']){
 
 ?>
 <table class="table table-hover anagram-table">
@@ -63,7 +40,7 @@ if($_GET['q']){
 <?php
 
 
-$q = strtoupper(strip_tags(str_replace(" ","",$_GET['q'])));
+$q = strtoupper(strip_tags(str_replace(" ","",$_POST['q'])));
 $stack = array();
 
 if(strlen($q)>80){
