@@ -10,3 +10,30 @@
 .anagram-table {
   margin-bottom:50px;
 }
+
+.old-searches {
+  list-style:none;
+  margin:0;
+
+}
+
+.old-searches li {
+  float:left;
+  margin-right:10px;
+}
+
+.old-searches li a {
+  display:block;
+  padding:10px;
+  margin-bottom:10px;
+  background:#EEEEEE;
+}
+
+.old-searches li a:hover {
+    background:#EFEFEF;
+    text-decoration: none;
+}
+
+.hidden {
+  display:none;
+}

@@ -2,13 +2,20 @@
 
 require_once("init.php");
 
+$_REQUEST['old'] = strip_nonalpha($_REQUEST['old']);
+$_REQUEST['q'] = strip_nonalpha($_REQUEST['q']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Fast Anagrammer</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/style.css" rel="stylesheet" media="screen">
+<!--     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+ -->    <link href="css/style.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
   </head>
 <body>
   <div class="container">
@@ -20,56 +27,28 @@ require_once("init.php");
 </div>
 <div class="row" style="margin-top:70px;">
 <div class="span6 offset3">
-<form action="index.php" method="post">
+<form action="index.php" method="post" id="anagram-form">
 <div class="input-append">
-  <input class="span2 large" id="appendedInputButton" type="text" name="q" style="width:350px">
-  <button class="btn btn-primary" type="button" onclick="submit();">Anagram!</button>
+  <input class="span2 large" id="q" type="text" name="q" style="width:350px" value="<?php echo $_REQUEST['q']; ?>">
+  <button class="btn btn-primary" type="submit" id="anagram-button">Anagram!</button>
 </div>
 </form>
 </div>
 </div>
+<div class="row">
+	<div class="span6 offset3 old-search-span">
+	<ul class="old-searches">
+	</ul>
+	</div>
+</div>
 <div class="row" style="margin-top:20px;">
 <div class="span6 offset3" style="text-align:center">
-<?php
 
-if($_POST['q']){
-
-?>
-<table class="table table-hover anagram-table">
+<table class="table table-hover anagram-table hidden">
 <tbody>
-<?php
-
-
-$q = strtoupper(strip_tags(str_replace(" ","",$_POST['q'])));
-$stack = array();
-
-if(strlen($q)>80){
-	echo "<tr class='error'><td>Can't do more than 80 characters...</td></tr>";
-} else {
-
-	$file_handle = fopen("en_US.txt", "r");
-	while (!feof($file_handle)) {
-		$line = strtoupper(fgets($file_handle));
-		$stringArray = str_split($line);
-		$popped = array_pop($stringArray);
-		$repopped = array_pop($stringArray);	
-		if(is_anagram($q,$line,$stringArray)){
-			$stack[$line] = strlen($line)-2;
-		}
-	}
-	fclose($file_handle);
-	arsort($stack);
-	foreach($stack as $string=>$length){
-		echo "<tr><td>".$string."</td></tr>";
-	}
-}
-
-?>
-
 </tbody>
 </table>
 
-<?php } ?>
 </div></div>
   </div>
 <div class="copyright">
