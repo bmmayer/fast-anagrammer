@@ -2,9 +2,6 @@
 
 require_once("init.php");
 
-$_REQUEST['old'] = strip_nonalpha($_REQUEST['old']);
-$_REQUEST['q'] = strip_nonalpha($_REQUEST['q']);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,18 +13,25 @@ $_REQUEST['q'] = strip_nonalpha($_REQUEST['q']);
     <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init("759991c078d100ced79e4ed0fe9360f7");</script>
+    <!-- end Mixpanel -->
   </head>
 <body>
+    <div class="block-white"></div>
   <div class="container">
 
-<div class="row" style="margin-top:100px;">
+<div class="row logo">
 <div class="span6 offset3">
 <a href="http://fastanagrammer.com"><img src="logo.png" style="width:100%" /></a>
 </div>
 </div>
-<div class="row" style="margin-top:70px;">
+<div class="row anagram-form-row">
 <div class="span6 offset3">
-<form action="index.php" method="post" id="anagram-form">
+<form id="anagram-form">
 <div class="input-append">
   <input class="span2 large" id="q" type="text" name="q" style="width:350px" value="<?php echo $_REQUEST['q']; ?>">
   <button class="btn btn-primary" type="submit" id="anagram-button">Anagram!</button>
@@ -35,13 +39,13 @@ $_REQUEST['q'] = strip_nonalpha($_REQUEST['q']);
 </form>
 </div>
 </div>
-<div class="row">
+<div class="row anagram-oldsearch-row">
 	<div class="span6 offset3 old-search-span">
 	<ul class="old-searches">
 	</ul>
 	</div>
 </div>
-<div class="row" style="margin-top:20px;">
+<div class="row results-table">
 <div class="span6 offset3" style="text-align:center">
 
 <table class="table table-hover anagram-table hidden">
