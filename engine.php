@@ -10,8 +10,8 @@ $return = array();
 $return["old"] = array();
 $return["results"] = array();
 
-if(strlen($q)>80){
-	$return["error"] = "Can't do more than 80 characters...";
+if(strlen($q)>20){
+	$return["error"] = "Can't do more than 20 characters...";
 } else if(strlen($q)<2){
 	$return["error"] = "Please enter more than one character.";
 } else {

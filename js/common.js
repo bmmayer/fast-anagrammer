@@ -33,8 +33,8 @@ function anagramThis(query,e){
 	    			var str = data.results[i];
 	    			$(".anagram-table tbody").append("<tr><td>"+str+"</td></tr>");
 	    		}
+	    		$(".old-searches").prepend("<li><a class='clickToQ' href='javascript:anagramThis(\""+data.old+"\");'>"+data.old+"</a></li>");
 	    	}
-	    	$(".old-searches").prepend("<li><a class='clickToQ' href='javascript:anagramThis(\""+data.old+"\");'>"+data.old+"</a></li>");
 	    	$(".old-searches a").on("click",function(){
 	    		mixpanel.track("Click Old Search");
 	    		$("#q").val($(this).html());
