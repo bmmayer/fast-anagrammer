@@ -6,7 +6,8 @@ require_once("init.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fast Anagrammer</title>
+    <title>Fast Anagrammer: Fastest on the web for Scrabble, Words with Friends, and other word games</title>
+    <meta name="description" content="Use this fast anagrammer for Scrabble, Words with Friends, and other word games.  Fast and simple anagrammer for the web, using the SOWPODS word list." />
     <link href="css/bootstrap.min.css?v=<?php echo VERSION; ?>" rel="stylesheet" media="screen">
 <!--     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
  -->    <link href="css/style.css?v=<?php echo VERSION; ?>" rel="stylesheet" media="screen">
@@ -33,7 +34,7 @@ mixpanel.init("759991c078d100ced79e4ed0fe9360f7");</script>
 <div class="span6 offset3">
 <form id="anagram-form">
 <div class="input-append">
-  <input class="span2 large" id="q" type="text" name="q" style="width:350px" value="<?php echo $_REQUEST['q']; ?>">
+  <input class="span2 large" id="q" type="text" placeholder="e.g., ANAGRAM" name="q" style="width:350px" value="<?php echo $_REQUEST['q']; ?>">
   <button class="btn btn-primary" type="submit" id="anagram-button">Anagram!</button>
 </div>
 </form>

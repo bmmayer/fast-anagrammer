@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+Disallow: /php/
+Disallow: /js/
+Disallow: /img/
+Disallow: /css/
+Sitemap: http://fastanagrammer.com/sitemap.xml
