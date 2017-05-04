@@ -6,6 +6,13 @@ require_once("init.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4313504593440754",
+    enable_page_level_ads: true
+  });
+</script>
     <title>Fast Anagrammer: Fastest on the web for Scrabble, Words with Friends, and other word games</title>
     <meta name="description" content="Use this fast anagrammer for Scrabble, Words with Friends, and other word games.  Fast and simple anagrammer for the web, using the SOWPODS word list." />
     <link href="css/bootstrap.min.css?v=<?php echo VERSION; ?>" rel="stylesheet" media="screen">
@@ -20,7 +27,14 @@ typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var
 b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
 mixpanel.init("759991c078d100ced79e4ed0fe9360f7");</script>
     <!-- end Mixpanel -->
-  </head>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4313504593440754",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
 <body>
     <div class="block-white"></div>
   <div class="container">
