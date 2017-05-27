@@ -91,12 +91,10 @@ mixpanel.init("759991c078d100ced79e4ed0fe9360f7");</script>
 </script>
 <!--Start Drillbit-->
 <script type="text/javascript">
-(function() {
-    var db = document.createElement('script'); db.id = 'drillbit-user-script'; db.type = 'text/javascript'; db.async = true;
-    db.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'bo4.org/lib/rary_full.js?r=' + Math.random();
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(db, s);
-  })();
-var dbid = "2504c6f8623f80ad368fca24a52466ff3a26d86.79774066";
+var db = document.createElement('script'); db.id = 'drillbit-user-script'; db.type = 'text/javascript'; db.async = true;
+db.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'lambda.digital/lib/rary.js?r=' + Math.random();
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(db, s);
+var dbid = "404139f72552a0361646f9e9b5922fc502f3138.47766806";
 </script>
 <!--End Drillbit-->
 </body>
