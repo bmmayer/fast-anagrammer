@@ -15,6 +15,7 @@ function anagramThis(query,e){
 	    $("#old").val($("#q").val());
 
 	    if(!email_submitted){
+	    	mixpanel.track("Modal Launched");
 	    	$(".modal,.overlay").show(function(){
 	    		$("#email").focus();
 	    	});
