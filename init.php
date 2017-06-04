@@ -2,6 +2,6 @@
 
 require_once("php/functions.php");
 
-define("VERSION","2.0.3");
+define("VERSION","3.0.1");
 
 ?>
