@@ -6,13 +6,6 @@ require_once("init.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4313504593440754",
-    enable_page_level_ads: true
-  });
-</script>
     <title>Fast Anagrammer: Fastest on the web for Scrabble, Words with Friends, and other word games</title>
     <meta name="description" content="Use this fast anagrammer for Scrabble, Words with Friends, and other word games.  Fast and simple anagrammer for the web, using the SOWPODS word list." />
     <link href="css/bootstrap.min.css?v=<?php echo VERSION; ?>" rel="stylesheet" media="screen">
@@ -75,8 +68,33 @@ mixpanel.init("759991c078d100ced79e4ed0fe9360f7");</script>
   	<p>&copy; <?php echo date("Y"); ?> <a href="http://brianmayer.com">Brian Mayer</a>.  All rights reserved.</p>
   </div>
 </div>
+<div class="overlay">
+</div>
+<div class="email-modal modal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+        <h4>Win a Scrabble Set Luxury Edition ($200 value)!</h4>
+      </div>
+      <div class="modal-body">
+        <form id="email-form">
+          <p>For a limited time we're giving out a free <a href="https://www.amazon.com/Scrabble-Luxury-Edition-Board-Game/dp/B004SRXJZ4" target="_blank">Scrabble Luxury Edition Board Game</a> worth $200. Type your email to enter:</p>
+          <div class="input-group">
+            <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com">
+            <button class="btn btn-primary" type="submit">Enter + Continue</button>
+          </div>
+          <p class="small">By submitting your email you consent to our <a href="#" class="terms-link">Terms of Service</a>.</p>
+          <div class="terms">
+            <p class="small">Terms of Contest. By entering your email you are submitting your candidacy to win a Scrabble Luxury Edition Board Game set worth $200. Fast Anagrammer Co. shall award this gift to any or all participants at its own discretion. Entering this contest does not guarantee a win. You agree that Fast Anagrammer Co. and its affiliates, partners, and customers may send e-mails to you at any e-mail address you provide us or use other electronic means of communication to the extent permitted by law. Consent may be revoked at any time and by any reasonable means.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-21430975-11']);

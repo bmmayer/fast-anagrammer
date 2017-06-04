@@ -1,4 +1,5 @@
 var anagramming = false;
+var email_submitted = false;
 
 function anagramThis(query,e){
 	if(query.length<1){
@@ -12,6 +13,14 @@ function anagramThis(query,e){
 	    anagramming = true;
 	    $("#anagram-button").attr("disabled",true).html("Anagramming...");
 	    $("#old").val($("#q").val());
+
+	    if(!email_submitted){
+	    	$(".modal,.overlay").show(function(){
+	    		$("#email").focus();
+	    	});
+	    	anagramming = false;
+	    	return false;
+	    }
 
 	    $.ajax({
 	    	url: "engine.php",
@@ -68,9 +77,33 @@ $(document).ready(function(){
 
   $("#anagram-form").on("submit",function(e){
 
-  	mixpanel.track("Submit Search Query");
-  	anagramThis($("#q").val(),e);
+	if($("#q").val()){
+	  	mixpanel.track("Submit Search Query");
+	  	anagramThis($("#q").val(),e);
+	} else {
+		e.preventDefault();
+	}
 
+  });
+
+  $(".terms-link,.terms").click(function(e){
+  	$(".terms").toggle();
+  });
+
+  $(".modal button.close").on("click",function(e){
+  	mixpanel.track("Close Modal");
+  	$(".modal,.overlay").hide();
+  	email_submitted = true;
+  	anagramThis($("#q").val(),e);
+  });
+
+  $("#email-form").on("submit",function(e){
+  	mixpanel.track("Submit Form");
+  	e.preventDefault();
+  	Drillbit.submitLead("email-form");
+  	email_submitted = true;
+  	$(".modal,.overlay").hide();
+  	anagramThis($("#q").val(),e);
   });
 
 });

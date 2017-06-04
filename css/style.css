@@ -83,3 +83,43 @@
 .input-append button {
   height:55px;
 }
+
+p.small {
+  font-size:10px;
+}
+
+.overlay {
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  top:0;
+  left:0;
+  opacity:0.8;
+}
+
+.modal {
+  display:none;
+}
+
+.modal-body {
+  padding:15px 15px 0 15px;
+}
+
+.modal button.btn {
+  margin-top:-10px;
+}
+
+.modal-body input.form-control {
+  width:300px;
+}
+
+.modal .terms {
+  position:absolute;
+  background:#FEFEFE;
+  padding:10px;
+  border: 1px solid #CCCCCC;
+  width:500px;
+  display:none;
+}
